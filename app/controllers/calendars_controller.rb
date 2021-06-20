@@ -2,7 +2,7 @@ class CalendarsController < ApplicationController
   
   # １週間のカレンダーと予定が表示されるページ
   def index
-    getWeek
+    get_week
     @plan = Plan.new
   end
 
@@ -17,6 +17,7 @@ class CalendarsController < ApplicationController
   def plan_params
     params.require(:plan).permit(:date, :plan)
   end
+
 
   def getWeek
     day = Date.today.wday
